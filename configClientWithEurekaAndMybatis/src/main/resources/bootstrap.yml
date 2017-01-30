@@ -3,7 +3,7 @@ spring:
     name: configClient
   cloud:
     config:
-      profile: prod
+      profile: dev
       label: master
       discovery:
         enabled: true                                 # 默认false，设为true表示使用注册中心中的configserver配置而不自己配置configserver的uri
