@@ -2,28 +2,27 @@
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="ehcache.xsd"
          updateCheck="true" monitoring="autodetect" dynamicConfig="true">
-<cache name="empcache"
-       maxEntriesLocalHeap="5000"
-       maxEntriesLocalDisk="1000"
-       eternal="false"
-       diskSpoolBufferSizeMB="20"
-       timeToIdleSeconds="200"
-       timeToLiveSeconds="500"
-       memoryStoreEvictionPolicy="LFU"
-       transactionalMode="off">
-    <persistence strategy="localTempSwap"/>
-    <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
-    	                                   properties="replicateAsynchronously=true,
-    	                                               replicatePuts=true,
-    	                                               replicateUpdates=true,
-    	                                               replicateUpdatesViaCopy=true,
-    	                                               replicateRemovals=true "/>
-</cache>
+    <cache name="empcache"
+           maxEntriesLocalHeap="5000"
+           maxEntriesLocalDisk="1000"
+           eternal="false"
+           diskSpoolBufferSizeMB="20"
+           timeToIdleSeconds="200"
+           timeToLiveSeconds="500"
+           memoryStoreEvictionPolicy="LFU"
+           transactionalMode="off">
+        <persistence strategy="localTempSwap"/>
+        <cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+                                   properties="replicateAsynchronously=true,
+                                               replicatePuts=true,
+                                               replicateUpdates=true,
+                                               replicateUpdatesViaCopy=true,
+                                               replicateRemovals=true "/>
+    </cache>
 
     <cacheManagerPeerProviderFactory
             class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
-            properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1,
-multicastGroupPort=4446, timeToLive=32"/>
+            properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1,multicastGroupPort=4446, timeToLive=32"/>
 
     <cacheManagerPeerListenerFactory
             class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
