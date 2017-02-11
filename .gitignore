@@ -27,3 +27,5 @@ nbdist/
 /cacheDemo/gradle
 /cacheDemo2/gradle
 /cacheDemo2/out
+
+.DS_Store
