@@ -29,3 +29,5 @@ nbdist/
 /cacheDemo2/out
 
 .DS_Store
+
+HelloWorld/gradle
